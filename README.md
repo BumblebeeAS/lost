@@ -45,19 +45,20 @@ tested for Ubuntu):
 2. Install docker-compose:
     https://docs.docker.com/compose/install/
 3. Clone LOST:
-    ```
+    ```bash
     git clone https://github.com/l3p-cv/lost.git
     ```
-4. Run quick_setup script:
-    ```
-    cd lost/docker/quick_setup/
-    # python3 quick_setup.py path/to/install/lost
-    python3 quick_setup.py ~/lost
+4. Build LOST images:
+    ```bash
+    cd lost
+    docker build -f docker/lost-base/Dockerfile -t l3pcv/lost-base .
+    docker build -f docker/lost/Dockerfile -t l3pcv/lost .
     ```
 5. Run LOST:
-
-    Follow instructions of the quick_setup script, 
-    printed in the command line.
+    ```bash
+    cd docker/compose
+    docker-compose up -d
+    ```
 
 
 ## Citing LOST
