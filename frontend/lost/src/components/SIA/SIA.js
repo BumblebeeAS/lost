@@ -136,10 +136,7 @@ class SIA extends Component {
         if (prevProps.taskFinished !== this.props.taskFinished){
             const newAnnos = this.undoAnnoRotationForUpdate(this.props.filter)
             this.props.siaUpdateAnnos(newAnnos).then(()=>{
-                this.props.siaSendFinishToBackend().then(()=>{
-                    this.siteHistory.push('/dashboard')
-
-                })
+                this.siteHistory.push('/dashboard')
             })
         }
         if(this.props.annos.image){

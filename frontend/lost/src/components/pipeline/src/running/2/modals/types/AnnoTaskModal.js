@@ -6,12 +6,17 @@ import { alertSuccess } from '../../../../globalComponents/Sweetalert'
 
 import { createHashHistory } from 'history'
 
-function handleSiaRewiewClick(props){
+function handleSiaReviewClick(props){
     props.siaReviewSetElement(props.id)
     props.chooseAnnoTask(
         props.annoTask.id, 
         createHashHistory().push('/sia-review')
     )
+}
+
+function handleSiaSendFinishToBackend(props){
+    props.toggleModal();
+    props.siaSendFinishToBackend()
 }
 
 function annotationReleaseSuccessful(){
@@ -67,9 +72,13 @@ export default (props)=>{
                     />
                 </CollapseCard>
                 <Button color="warning" style={{ marginLeft:10, marginTop:20, marginBottom: '1rem' }}
-                    onClick={e => handleSiaRewiewClick(props)}>Review Annotations</Button>
+                    onClick={e => handleSiaReviewClick(props)}>Review Annotations</Button>
                 <Button color="danger" style={{ marginLeft:10, marginTop:20, marginBottom: '1rem' }}
                     onClick={e => handleForceAnnotationRelease(props)}>Force Annotation Release</Button>
+                {props.annoTask.progress === 100 ?? (
+                    <Button color="danger" style={{ marginLeft:10, marginTop:20, marginBottom: '1rem' }}
+                        onClick={e => handleSiaSendFinishToBackend(props)}>Confirm Annotations</Button>
+                )}
 
             </ModalBody>
         </>
