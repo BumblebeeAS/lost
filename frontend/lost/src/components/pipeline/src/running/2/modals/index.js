@@ -12,7 +12,7 @@ import actionsAll from '../../../../../../actions'
 
 
 const {toggleModal} = actions
-const {siaReviewSetElement, chooseAnnoTask, forceAnnotationRelease} = actionsAll
+const {siaReviewSetElement, chooseAnnoTask, forceAnnotationRelease, siaSendFinishToBackend} = actionsAll
 
 class BaseModal extends Component {
     constructor() {
@@ -38,6 +38,8 @@ class BaseModal extends Component {
                     siaReviewSetElement={this.props.siaReviewSetElement}
                     chooseAnnoTask={this.props.chooseAnnoTask}
                     forceAnnotationRelease={this.props.forceAnnotationRelease}
+                    siaSendFinishToBackend={this.props.siaSendFinishToBackend}
+                    toggleModal={this.toggleModal}
                     {...this.props.data}
                     />
                 )
@@ -93,5 +95,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    {toggleModal, siaReviewSetElement, chooseAnnoTask, forceAnnotationRelease}
+    {toggleModal, siaReviewSetElement, chooseAnnoTask, forceAnnotationRelease, siaSendFinishToBackend}
 )(BaseModal)
