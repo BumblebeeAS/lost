@@ -188,7 +188,7 @@ class MyAnnoTasks extends Component {
         return (
             <React.Fragment>
                 {this.renderStatisticModal()}
-                <Table hover responsive className='table-outline mb-0 d-none d-sm-table'>
+                <Table hover responsive className='table-outline mb-0'>
                     <thead className='thead-light'>
                         <tr>
                             <th className='text-center'>Name</th>

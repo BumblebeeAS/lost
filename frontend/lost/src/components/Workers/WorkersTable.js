@@ -152,7 +152,7 @@ class WorkersTable extends Component {
     render() {
         return (
             <React.Fragment>
-                <Table hover responsive className='table-outline mb-0 d-none d-sm-table'>
+                <Table hover responsive className='table-outline mb-0'>
                     <thead className='thead-light'>
                         <tr>
                             <th className='text-center'>Name</th>
