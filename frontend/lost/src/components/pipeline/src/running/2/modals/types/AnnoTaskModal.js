@@ -75,7 +75,7 @@ export default (props)=>{
                     onClick={e => handleSiaReviewClick(props)}>Review Annotations</Button>
                 <Button color="danger" style={{ marginLeft:10, marginTop:20, marginBottom: '1rem' }}
                     onClick={e => handleForceAnnotationRelease(props)}>Force Annotation Release</Button>
-                {props.annoTask.progress === 100 ?? (
+                {props.annoTask.progress === 100 && (
                     <Button color="danger" style={{ marginLeft:10, marginTop:20, marginBottom: '1rem' }}
                         onClick={e => handleSiaSendFinishToBackend(props)}>Confirm Annotations</Button>
                 )}
