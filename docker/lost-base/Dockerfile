@@ -1,4 +1,4 @@
-FROM nginx:1.21.4
+FROM nginx:1.21.3
 
 # Install Backend Dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends wget curl bzip2 python3.5 \
